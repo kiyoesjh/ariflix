@@ -117,6 +117,7 @@ const Tab = ({ companies, countries, videos, isMovie }) => {
               <VideoItem key={id}>
                 <iframe
                   id={id}
+                  title={name}
                   name={name}
                   src={`https://www.youtube.com/embed/${key}`}
                   width="300"
