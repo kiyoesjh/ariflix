@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ariflix/precache-manifest.d62fa85632577a0ae967ea5f063cc158.js"
+  "/ariflix/precache-manifest.1e73571656517019d322b84a850e1b1d.js"
 );
 
 self.addEventListener('message', (event) => {
