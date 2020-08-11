@@ -28,7 +28,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://kiyoesjh.github.io/ariflix",
+  "homepage": "https://kiyoesjh.github.io/",
   "browserslist": {
     "production": [
       ">0.2%",
