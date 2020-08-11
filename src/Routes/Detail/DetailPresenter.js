@@ -33,7 +33,6 @@ const Content = styled.div`
   max-width: 1160px;
   height: 100%;
   margin: 0 auto;
-  overflow-x: auto;
 `;
 
 const Cover = styled.div`
@@ -48,6 +47,7 @@ const Cover = styled.div`
 const Data = styled.div`
   width: 60%;
   margin-left: 30px;
+  overflow-x: auto;
 `;
 
 const Title = styled.span`

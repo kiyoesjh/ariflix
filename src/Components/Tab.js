@@ -90,7 +90,7 @@ const Tab = ({ companies, countries, videos, isMovie }) => {
         {active === "company" && (
           <TabDetail>
             {companies.map(({ logo_path, name }) => (
-              <ImgList key={logo_path}>
+              <ImgList key={name}>
                 <Img
                   src={
                     logo_path
