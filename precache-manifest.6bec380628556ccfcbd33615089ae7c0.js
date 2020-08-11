@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c057ec535884733c8a317e80fa2ba356",
+    "revision": "717641567c0d7f0b2d0d6c52a29f938c",
     "url": "/ariflix/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ariflix/static/js/2.6a3b8ffd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bfe32891a449df5f2439",
-    "url": "/ariflix/static/js/main.20ea7aa3.chunk.js"
+    "revision": "36dea572f49491005739",
+    "url": "/ariflix/static/js/main.4251dea7.chunk.js"
   },
   {
     "revision": "0dff5a992e493decd812",
