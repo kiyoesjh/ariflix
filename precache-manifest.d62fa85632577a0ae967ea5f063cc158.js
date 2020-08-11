@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a32c1ab6d334728ff4fe9830179934a7",
+    "revision": "a381dc42bd82478b2149eec5b2faa20d",
     "url": "/ariflix/index.html"
   },
   {
