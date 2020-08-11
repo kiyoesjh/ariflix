@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/ariflix/static/js/main.d8ca09f8.chunk.js",
+    "main.js.map": "/ariflix/static/js/main.d8ca09f8.chunk.js.map",
+    "runtime-main.js": "/ariflix/static/js/runtime-main.59a9d03b.js",
+    "runtime-main.js.map": "/ariflix/static/js/runtime-main.59a9d03b.js.map",
+    "static/js/2.e10e1730.chunk.js": "/ariflix/static/js/2.e10e1730.chunk.js",
+    "static/js/2.e10e1730.chunk.js.map": "/ariflix/static/js/2.e10e1730.chunk.js.map",
+    "index.html": "/ariflix/index.html",
+    "precache-manifest.b37c7a65e965dbb470ffe4c79ba57563.js": "/ariflix/precache-manifest.b37c7a65e965dbb470ffe4c79ba57563.js",
+    "service-worker.js": "/ariflix/service-worker.js",
+    "static/js/2.e10e1730.chunk.js.LICENSE.txt": "/ariflix/static/js/2.e10e1730.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.59a9d03b.js",
+    "static/js/2.e10e1730.chunk.js",
+    "static/js/main.d8ca09f8.chunk.js"
+  ]
+}
