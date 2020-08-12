@@ -5,8 +5,10 @@ import Helmet from "react-helmet";
 import Loader from "../../Components/Loader";
 import ImdbSVG from "../../Components/ImdbSVG";
 import Tab from "../../Components/Tab";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
+  position: relative;
   height: calc(100vh - 50px);
   width: 100%;
   position: relative;
@@ -50,6 +52,11 @@ const Data = styled.div`
   overflow-x: auto;
 `;
 
+const TitleWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const Title = styled.span`
   font-size: 32px;
 `;
@@ -72,8 +79,9 @@ const Overview = styled.p`
 `;
 
 const ImdbIcon = styled.a`
-  display: inline-block;
+  display: block;
   margin-left: 10px;
+  height: 20px;
 `;
 
 const Season = styled.strong`
@@ -107,7 +115,50 @@ const SeasonPoster = styled.img`
   height: 250px;
 `;
 
-const DetailPresenter = ({ result, pathname, isMovie, loading, error }) =>
+const CollectionLink = styled(Link)`
+  display: flex;
+  padding: 0 5px;
+  height: 20px;
+  margin-left: 5px;
+  align-items: center;
+  border-radius: 3px;
+  background-color: #3498db;
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    height: 33px;
+    width: 2px;
+    transform-origin: center;
+    background-color: #fff;
+    content: " ";
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+`;
+
+const DetailPresenter = ({ result, handler, isMovie, loading, error }) =>
   loading ? (
     <>
       <Helmet>
@@ -139,19 +190,28 @@ const DetailPresenter = ({ result, pathname, isMovie, loading, error }) =>
           }
         />
         <Data>
-          <Title>
-            {result.original_title
-              ? result.original_title
-              : result.original_name}
-          </Title>
-          {result.imdb_id ? (
-            <ImdbIcon
-              href={`https://www.imdb.com/title/${result.imdb_id}`}
-              target="_blank"
-            >
-              <ImdbSVG width={40} height={20} />
-            </ImdbIcon>
-          ) : null}
+          <TitleWrap>
+            <Title>
+              {result.original_title
+                ? result.original_title
+                : result.original_name}
+            </Title>
+            {result.imdb_id ? (
+              <ImdbIcon
+                href={`https://www.imdb.com/title/${result.imdb_id}`}
+                target="_blank"
+              >
+                <ImdbSVG width={40} height={20} />
+              </ImdbIcon>
+            ) : null}
+            {result.belongs_to_collection && (
+              <CollectionLink
+                to={`/collection/${result.belongs_to_collection.id}`}
+              >
+                collection
+              </CollectionLink>
+            )}
+          </TitleWrap>
           <ItemContainer>
             <Item>
               <span role="img" aria-label="vote average">
@@ -208,6 +268,7 @@ const DetailPresenter = ({ result, pathname, isMovie, loading, error }) =>
           />
         </Data>
       </Content>
+      <CloseButton onClick={() => handler(isMovie ? "/" : "/tv")} />
     </Container>
   );
 
@@ -217,6 +278,7 @@ DetailPresenter.propTypes = {
   isMovie: PropTypes.bool,
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
+  handler: PropTypes.func,
 };
 
 export default DetailPresenter;

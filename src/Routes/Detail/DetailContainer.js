@@ -13,9 +13,11 @@ export default class extends React.Component {
       error: null,
       loading: true,
       isMovie: pathname.includes("/movie"),
-      pathname: pathname,
+      handler: null,
     };
   }
+
+  handleHistoryBack = (func) => (path) => func(path);
 
   async componentDidMount() {
     const {
@@ -47,19 +49,23 @@ export default class extends React.Component {
     } catch {
       this.setState({ error: "Can't find anything" });
     } finally {
-      this.setState({ loading: false, result });
+      this.setState({
+        loading: false,
+        result,
+        handler: this.handleHistoryBack(push),
+      });
     }
   }
 
   render() {
-    const { result, pathname, isMovie, error, loading } = this.state;
+    const { result, isMovie, error, loading, handler } = this.state;
     return (
       <DetailPresenter
         result={result}
-        pathname={pathname}
         isMovie={isMovie}
         error={error}
         loading={loading}
+        handler={handler}
       />
     );
   }

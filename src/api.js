@@ -37,3 +37,5 @@ export const moviesApi = {
     api.get("search/movie", { params: { query: encodeURIComponent(term) } }),
   externalIDs: (id) => api.get(`movie/${id}/external_ids`),
 };
+
+export const collectionApi = (id) => api.get(`collection/${id}`);
