@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/ariflix/static/js/main.e153da5b.chunk.js",
-    "main.js.map": "/ariflix/static/js/main.e153da5b.chunk.js.map",
+    "main.js": "/ariflix/static/js/main.b437517f.chunk.js",
+    "main.js.map": "/ariflix/static/js/main.b437517f.chunk.js.map",
     "runtime-main.js": "/ariflix/static/js/runtime-main.59a9d03b.js",
     "runtime-main.js.map": "/ariflix/static/js/runtime-main.59a9d03b.js.map",
-    "static/js/2.247a6609.chunk.js": "/ariflix/static/js/2.247a6609.chunk.js",
-    "static/js/2.247a6609.chunk.js.map": "/ariflix/static/js/2.247a6609.chunk.js.map",
+    "static/js/2.1a1532b6.chunk.js": "/ariflix/static/js/2.1a1532b6.chunk.js",
+    "static/js/2.1a1532b6.chunk.js.map": "/ariflix/static/js/2.1a1532b6.chunk.js.map",
     "index.html": "/ariflix/index.html",
-    "precache-manifest.db2cf402c4572b25cc1e22e8e031c74f.js": "/ariflix/precache-manifest.db2cf402c4572b25cc1e22e8e031c74f.js",
+    "precache-manifest.5e8e670b065eadbdf647ec9b54e43201.js": "/ariflix/precache-manifest.5e8e670b065eadbdf647ec9b54e43201.js",
     "service-worker.js": "/ariflix/service-worker.js",
-    "static/js/2.247a6609.chunk.js.LICENSE.txt": "/ariflix/static/js/2.247a6609.chunk.js.LICENSE.txt"
+    "static/js/2.1a1532b6.chunk.js.LICENSE.txt": "/ariflix/static/js/2.1a1532b6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.59a9d03b.js",
-    "static/js/2.247a6609.chunk.js",
-    "static/js/main.e153da5b.chunk.js"
+    "static/js/2.1a1532b6.chunk.js",
+    "static/js/main.b437517f.chunk.js"
   ]
 }
