@@ -2,10 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
+import { Link, Route } from "react-router-dom";
 import Loader from "../../Components/Loader";
 import ImdbSVG from "../../Components/ImdbSVG";
 import Tab from "../../Components/Tab";
-import { Link } from "react-router-dom";
+import DetailCompany from "../DetailCompany";
+import DetailCountry from "../DetailCountry";
+import DetailVideo from "../DetailVideo";
 
 const Container = styled.div`
   position: relative;
@@ -158,7 +161,7 @@ const CloseButton = styled.button`
   }
 `;
 
-const DetailPresenter = ({ result, handler, isMovie, loading, error }) =>
+const DetailPresenter = ({ result, handler, isMovie, loading, path, error }) =>
   loading ? (
     <>
       <Helmet>
@@ -243,7 +246,7 @@ const DetailPresenter = ({ result, handler, isMovie, loading, error }) =>
               <Season>Season</Season>
               <SeasonWrap>
                 {result.seasons.map(({ poster_path, name }) => (
-                  <SeasonList key={poster_path}>
+                  <SeasonList key={poster_path + name}>
                     <SeasonPoster
                       src={
                         poster_path
@@ -257,15 +260,16 @@ const DetailPresenter = ({ result, handler, isMovie, loading, error }) =>
               </SeasonWrap>
             </>
           ) : null}
-
           <Tab
             companies={result.production_companies}
             countries={
               isMovie ? result.production_countries : result.origin_country
             }
             videos={result.videos.results}
-            isMovie={isMovie}
           />
+          <Route path={`${path}/company`} component={DetailCompany} />
+          <Route path={`${path}/country`} component={DetailCountry} />
+          <Route path={`${path}/video`} component={DetailVideo} />
         </Data>
       </Content>
       <CloseButton onClick={() => handler(isMovie ? "/" : "/tv")} />
@@ -274,11 +278,11 @@ const DetailPresenter = ({ result, handler, isMovie, loading, error }) =>
 
 DetailPresenter.propTypes = {
   result: PropTypes.object,
-  pathname: PropTypes.string,
   isMovie: PropTypes.bool,
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
   handler: PropTypes.func,
+  path: PropTypes.string,
 };
 
 export default DetailPresenter;
