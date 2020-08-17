@@ -46,6 +46,10 @@ export default class extends React.Component {
     }
   };
 
+  componentDidMount() {
+    this.searchInput.focus();
+  }
+
   render() {
     const { movieResults, tvResults, searchTerm, error, loading } = this.state;
     return (
@@ -57,6 +61,9 @@ export default class extends React.Component {
         loading={loading}
         handleSubmit={this.handleSubmit}
         updateTerm={this.updateTerm}
+        searchRef={(input) => {
+          this.searchInput = input;
+        }}
       />
     );
   }

@@ -12,9 +12,9 @@ import Search from "../Routes//Search";
 import Detail from "../Routes//Detail";
 import Collection from "../Routes//Collection";
 
-export default () => (
+export default ({ handleToggleTheme, theme }) => (
   <Router>
-    <Header />
+    <Header handleToggleTheme={handleToggleTheme} theme={theme} />
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/tv" component={TV} />

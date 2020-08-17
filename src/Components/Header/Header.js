@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
+import ToggleButton from "../ToggleButton";
 
 const Header = styled.header`
   color: #fff;
@@ -11,7 +12,8 @@ const Header = styled.header`
   height: 50px;
   display: flex;
   align-items: center;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 10px 30px;
   background: rgba(20, 20, 20, 0.8);
   box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
   z-index: 100;
@@ -41,18 +43,21 @@ const ALink = styled(Link)`
   justify-content: center;
 `;
 
-export default withRouter(({ location: { pathname } }) => (
-  <Header>
-    <List>
-      <Item selected={pathname === "/"}>
-        <ALink to="/">Movies</ALink>
-      </Item>
-      <Item selected={pathname === "/tv"}>
-        <ALink to="/tv">TV</ALink>
-      </Item>
-      <Item selected={pathname === "/search"}>
-        <ALink to="/search">Search</ALink>
-      </Item>
-    </List>
-  </Header>
-));
+export default withRouter(
+  ({ location: { pathname }, handleToggleTheme, theme }) => (
+    <Header>
+      <List>
+        <Item selected={pathname === "/"}>
+          <ALink to="/">Movies</ALink>
+        </Item>
+        <Item selected={pathname === "/tv"}>
+          <ALink to="/tv">TV</ALink>
+        </Item>
+        <Item selected={pathname === "/search"}>
+          <ALink to="/search">Search</ALink>
+        </Item>
+      </List>
+      <ToggleButton click={handleToggleTheme} theme={theme} />
+    </Header>
+  )
+);

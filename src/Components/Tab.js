@@ -19,6 +19,7 @@ const LinkActive = styled.div`
   background: rgba(0, 0, 0, 0.3);
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.8);
   background-color: ${(props) => (props.isActive ? "#000" : null)};
+  color: ${(props) => (props.isActive ? "#fff" : "inherit")};
 `;
 
 const TabLink = styled(Link)`

@@ -30,6 +30,7 @@ const SearchPresenter = ({
   loading,
   handleSubmit,
   updateTerm,
+  searchRef,
 }) => (
   <Container>
     <Helmet>
@@ -40,6 +41,7 @@ const SearchPresenter = ({
         placeholder="Search Movies or TV Shows.."
         value={searchTerm}
         onChange={updateTerm}
+        ref={searchRef}
       />
     </Form>
     {loading ? (
